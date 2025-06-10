@@ -3,7 +3,7 @@ let currentSong = new Audio()
 let currentSongIndex = 0;
 let currentPlaylist
 async function getSongs(playlist) {
-    let a = await fetch(`/songs/${playlist}`);
+    let a = await fetch(`./api/songs/${playlist}`);
 
     let response = await a.text();
 
@@ -47,7 +47,7 @@ function convertToMinutesAndSeconds(totalSeconds) {
 
 // get playlist
 async function getPlaylist() {
-    let p = await fetch('/songs/')
+    let p = await fetch('./api/songs/')
 
     let response = await p.text();
 
@@ -61,7 +61,7 @@ async function getPlaylist() {
         const element = anchorTags[index];
         if (element.href.includes("/songs") && !element.href.includes(".json")) {
             // get meta data of each playlist 
-            let metadata = await fetch(`/songs/${element.innerText}/playlistInfo.json`)
+            let metadata = await fetch(`./api/songs/${element.innerText}/playlistInfo.json`)
             let m = await metadata.json()
             playlist.push(m)
 
