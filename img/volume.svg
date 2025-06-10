@@ -1,0 +1,10 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rounded Speaker -->
+  <path d="M4.5 9.5v5a1.5 1.5 0 001.5 1.5h2.3a1 1 0 01.7.3l4.5 4.5a1 1 0 001.7-.7V4.9a1 1 0 00-1.7-.7l-4.5 4.5a1 1 0 01-.7.3H6A1.5 1.5 0 004.5 9.5z" fill="currentColor" stroke="none"/>
+
+  <!-- Sound Waves with Added Gap -->
+  <path d="M16.2 8.5a4 4 0 010 7" />
+  <path d="M18.5 6a7 7 0 010 12" />
+</svg>

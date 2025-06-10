@@ -1,0 +1,47 @@
+<svg width="320" height="100" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for text -->
+    <linearGradient id="greyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#999999; stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Pulse wave animation using stroke-dasharray -->
+    <style>
+      <![CDATA[
+        .pulse-wave {
+          stroke-dasharray: 80;
+          stroke-dashoffset: 160;
+          animation: beat 1.5s infinite ease-in-out;
+        }
+
+        @keyframes beat {
+          0%   { stroke-dashoffset: 160; opacity: 0.2; }
+          50%  { stroke-dashoffset: 80; opacity: 1; }
+          100% { stroke-dashoffset: 160; opacity: 0.2; }
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <!-- Pulse Circle Icon -->
+  <g transform="translate(20, 20)">
+    <circle cx="30" cy="30" r="30" fill="#1a1a1a" stroke="#444" stroke-width="2" />
+    <!-- Animated Pulse Waveform -->
+    <path class="pulse-wave"
+          d="M 10 30 L 15 30 L 18 20 L 22 40 L 26 30 L 30 25 L 34 35 L 38 20 L 42 40 L 46 30 L 50 30"
+          stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Decorative Wave Line -->
+  <path d="M 90 60 C 100 40, 110 40, 120 60 S 140 80, 150 60 S 160 40, 170 60"
+        stroke="#888888" stroke-width="2" fill="none" />
+
+  <!-- PulseTune Text -->
+  <text x="90" y="42" font-family="Segoe UI, sans-serif" font-size="28" fill="url(#greyGradient)" letter-spacing="1">
+    Pulse
+  </text>
+  <text x="165" y="72" font-family="Segoe UI, sans-serif" font-size="28" fill="#ffffff" letter-spacing="1">
+    Tune
+  </text>
+</svg>

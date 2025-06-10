@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter:wght@400;600&family=Manrope&family=Outfit&family=Poppins:wght@400;600&family=Raleway&family=Roboto&family=Space+Grotesk&family=Urbanist&display=swap"
+        rel="stylesheet">
+
+    <title>PulseTune - Web Player: Feel the pulse of your music</title>
+</head>
+
+<body>
+    <div class="container flex  justify-center align-center  bg-black">
+        <div class="left">
+            <div class="home bg-grey-1 m-1 rounded p-1">
+                <img class="close" src="img/close.svg" alt="close">
+                <img class="logo" src="img/logo2.svg" alt="logo">
+                <ul>
+                    <li><img class="invert" src="img/home.svg" alt="home">Home</li>
+                    <li><img class="invert" src="img/search.svg" alt="home">Search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey-1 m-1 rounded p-1">
+                <div class="heading">
+                    <img class="invert" src="img/playlist.svg" alt="playlist">Your Library
+                    <img class="invert bg-grey-2 p-2 more" src="img/more.svg" alt="more">
+                </div>
+                <div class="songlist">
+                    <ul class="rounded">
+                        <li class="bg-grey-3 rounded p-1" style="justify-content: center;">
+                            <img class="invert" src="img/music.svg" alt="music">
+                            <div class="songTitle">
+                                <p class="flex justify-center">Choose the playlist</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <a href="#">Legal</a>
+                    <a href="#">Privacy Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">About Ads</a>
+                    <a href="#">Accesibilty</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header  bg-grey-1 rounded p-1 ">
+                <div class="nav">
+                    <img class="invert menu" src="img/hambuger.svg" alt="menu">
+                    <img class="invert" src="img/leftnav.svg" alt="leftnav">
+                    <img class="invert" src="img/rightnav.svg" alt="rightnav">
+                </div>
+                <div class="button">
+                    <button class="btn">Sign up</button>
+                    <button class="btn">Login</button>
+                </div>
+            </div>
+            <div class="playlist bg-grey-1 p-1 rounded">
+                <h2>Playlist</h2>
+                <div class="cardContainer m-1">
+                </div>
+
+            </div>
+            <div class="playbar bg-grey-1 rounded p-1">
+                <div class="aboveSeekbar">
+                    <div class="songInfo">
+                    </div>
+                    <div class="songbtns">
+                        <img class="previousbtn" src="img/previousbtn.svg" alt="previousbtn">
+                        <img id="play" src="img/playbutton.svg" alt="playbtn">
+                        <img class="nextbtn" src="img/nextbtn.svg" alt="nextbtn">
+                    </div>
+                    <div class="voltime">
+                        <div class="volume">
+                            <img class="invert" src="img/volume.svg" alt="volume">
+                            <input type="range" name="volume" id="volume" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="songDuration">00:00 / 00:00</div>
+                    </div>
+                </div>
+                <div class="seekbar">
+                    <div class="bar"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
