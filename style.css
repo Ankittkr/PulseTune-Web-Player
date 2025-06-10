@@ -349,9 +349,7 @@
     .voltime{
         flex-direction: column-reverse;
     }
-    .volume {
-        width: 100%;
-    }
+
 }
 
 @media (max-width : 500px) {
@@ -373,4 +371,5 @@
     .voltime{
         justify-content: space-between;
     }
+    
 }
