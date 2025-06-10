@@ -59,7 +59,7 @@ async function getPlaylist() {
     let playlist = []
     for (let index = 1; index < anchorTags.length; index++) {
         const element = anchorTags[index];
-        if (element.href.includes("/songs")) {
+        if (element.href.includes("/songs") && !element.href.includes(".htaccess")) {
             // get meta data of each playlist 
             let metadata = await fetch(`/songs/${element.innerText}/playlistInfo.json`)
             let m = await metadata.json()
