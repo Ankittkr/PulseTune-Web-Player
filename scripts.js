@@ -3,7 +3,7 @@ let currentSong = new Audio()
 let currentSongIndex = 0;
 let currentPlaylist
 async function getSongs(playlist) {
-    let a = await fetch(`./api/songs/${playlist}`);
+    let a = await fetch(`./songs/${playlist}`);
 
     let response = await a.text();
 
@@ -25,7 +25,7 @@ async function getSongs(playlist) {
 }
 
 const playMuisc = (muisc, playlist, pause = false) => {
-    currentSong.src = `songs/${playlist}/${muisc}.mp3`
+    currentSong.src = `./songs/${playlist}/${muisc}.mp3`
     if (!pause) {
         currentSong.play()
         play.src = "img/pausebutton.svg";
@@ -47,10 +47,10 @@ function convertToMinutesAndSeconds(totalSeconds) {
 
 // get playlist
 async function getPlaylist() {
-    let p = await fetch('./api/songs/')
+    let p = await fetch('./songs/')
 
     let response = await p.text();
-
+    
     let div = document.createElement('div');
     div.innerHTML = response;
 
@@ -59,29 +59,29 @@ async function getPlaylist() {
     let playlist = []
     for (let index = 1; index < anchorTags.length; index++) {
         const element = anchorTags[index];
-        if (element.href.includes("/songs") && !element.href.includes(".json")) {
-            // get meta data of each playlist 
-            let metadata = await fetch(`./api/songs/${element.innerText}/playlistInfo.json`)
+        if (element.href.includes("/songs")) {
+            // get meta data of each playlist             
+            let metadata = await fetch(`./songs/${element.innerText}/playlistInfo.json`)
             let m = await metadata.json()
+            
             playlist.push(m)
 
 
         }
-    }
+    }    
     return playlist;
-
 }
 
 
 async function main() {
     let AllPlaylists = await getPlaylist()
-
+    
     // display playlist
     let cardContainer = document.querySelector(".cardContainer")
     for (const playlist of AllPlaylists) {
 
         cardContainer.innerHTML = cardContainer.innerHTML + `<div data-playlist="${playlist.title}" class="card     bg-grey-3 rounded">
-                                                                <img src="songs/${playlist.title}/cover.png" alt="playlist1">
+                                                                <img src="./songs/${playlist.title}/cover.png" alt="playlist1">
                                                                 <img class="playbtn" src="img/playbutton.svg" alt="playbutton">
                                                                 <h4>${playlist.title}</h4>
                                                                 <p>${playlist.tagline}</p>
